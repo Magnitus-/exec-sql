@@ -44,6 +44,7 @@ function executeFile(file, callback)
     connection.query(sql, function(err, result) {
         if(err)
         {
+            err.file = file;
             console.log(err);
         }
         callback(err);

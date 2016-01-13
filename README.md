@@ -96,6 +96,10 @@ execSQL.executeDirectory(path.join(__dirname,'views'), function(err) {
 
 ## Release Notes
 
+### 1.1.0
+
+Added 'file' as a propertie to logged errors when calling executeDirectory.
+
 ### 1.0.2
 
 Added installation instruction and corrected error in example.
