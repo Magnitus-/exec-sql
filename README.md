@@ -4,7 +4,11 @@ This is a library to execute MySQL SQL files in directories.
 
 It is not meant to be executed directly on the command line, although it can be used as the basis to create command line utilities to deploy SQL.
 
-##Procedures
+## installation
+
+npm install exec-sql
+
+## Procedures
 
 ### connect
 
@@ -84,13 +88,17 @@ var execSQL = require('exec-sql');
 var path = require('path');
 
 execSQL.connect('mysql', 'root', 'root');
-execSQL.executeDirectory(path.join(__dirname,'/views'), function(err) {
+execSQL.executeDirectory(path.join(__dirname,'views'), function(err) {
     execSQL.disconnect();
     console.log('Done!');
 });
 ```
 
 ## Release Notes
+
+### 1.0.2
+
+Added installation instruction and corrected error in example.
 
 ### 1.0.1
 

@@ -1,6 +1,6 @@
 {
   "name": "exec-sql",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Library to execute SQL files in a directory",
   "main": "index.js",
   "repository": {
