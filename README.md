@@ -1,6 +1,6 @@
 #Overview
 
-This is a library to execute SQL files in directories.
+This is a library to execute MySQL SQL files in directories.
 
 It is not meant to be executed directly on the command line, although it can be used as the basis to create command line utilities to deploy SQL.
 
@@ -61,9 +61,9 @@ None.
 
 ### executeDirectory
 
-Execute all SQL files in a given directory. Note that currently, sub-directories are not supposed and will in fact cause an error.
+Execute all SQL files in a given directory. SQL files are identified by their '.sql' ending in the file name. Currently, sub-directories are ignored.
 
-In future versions, sub-directories will be traversed recursively if specified or otherwise will be ignored.
+In future versions, sub-directories will be traversed recursively.
 
 #### Signature
 
@@ -76,3 +76,27 @@ executeDirectory(directory, callback)
 - directory: Directory to execute the SQL files from. Needs to be a valid path to the directory.
 - callback: Callback to be executed once the execution of the SQL files has completed. An error will be passed as its sole argument if any.
 
+## Example
+
+```
+//Let's say that we want to execute all SQL files in the relative 'views' directory in database 'mysql' with user 'root' that has the equivalent password.
+var execSQL = require('exec-sql');
+var path = require('path');
+
+execSQL.connect('mysql', 'root', 'root');
+execSQL.executeDirectory(path.join(__dirname,'/views'), function(err) {
+    execSQL.disconnect();
+    console.log('Done!');
+});
+```
+
+## Release Notes
+
+### 1.0.1
+
+- Added doc and corrected errata in documentation.
+- Fixed regex error.
+
+### 1.0.0
+
+Original Release

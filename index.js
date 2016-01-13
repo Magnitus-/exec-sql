@@ -27,7 +27,7 @@ function disconnect()
 function getFiles(directory)
 {
     var toReturn = [];
-    var fileRegex = new RegExp("^.+\.sql$", "g");
+    var fileRegex = new RegExp("^.+[.]sql$", "g");
     var files = fs.readdirSync(directory);
     files.forEach(function(file) {
         if(file.match(fileRegex) !== null)
