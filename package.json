@@ -1,0 +1,15 @@
+{
+  "name": "exec-sql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eric Vallee (eric_vallee2003@yahoo.ca)",
+  "license": "MIT",
+  "dependencies": {
+    "mysql": "^2.9.0",
+    "nimble": "0.0.2"
+  }
+}
