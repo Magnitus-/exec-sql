@@ -1,8 +1,16 @@
 {
   "name": "exec-sql",
   "version": "1.0.0",
-  "description": "",
+  "description": "Library to execute SQL files in a directory",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/Tractr/exec-sql"
+  },
+  "bugs": {
+    "url": "http://github.com/Tractr/exec-sql/issues",
+    "email": "eric_vallee2003@yahoo.ca"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
