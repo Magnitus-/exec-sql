@@ -1,4 +1,4 @@
-#Overview
+# Overview
 
 This is a library to execute MySQL SQL files in directories.
 
@@ -22,9 +22,9 @@ connect(db, user, password)
 
 #### Arguments
 
--db: Database to connect to
--user: Database user to connect as
--password: Password of the database user to connect as
+* db: Database to connect to
+* user: Database user to connect as
+* password: Password of the database user to connect as
 
 #### Return value
 
