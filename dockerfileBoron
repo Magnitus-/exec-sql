@@ -1,0 +1,9 @@
+FROM node:boron
+
+WORKDIR /node/home
+COPY package.json /node/home/
+RUN npm install
+COPY index.js /node/home/
+COPY tests/index.js /node/home/test.js
+
+CMD ["node", "test.js"]
