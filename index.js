@@ -2,6 +2,7 @@ var mysql = require('mysql');
 var fs = require('fs');
 var path = require('path');
 var nimble = require('nimble');
+var Promise = require('bluebird');
 
 var connection = null;
 
@@ -40,6 +41,19 @@ function getFiles(directory)
 
 function executeFile(file, callback)
 {
+    //Return a promise is no callback
+    if(!callback) {
+        return new Promise(function(resolve, reject) {
+            executeFile(file, function(err) {
+                if(err) {
+                    reject(err);
+                } else {
+                    resolve();
+                }
+            })
+        });
+    }
+
     var sql = fs.readFileSync(file).toString();
     connection.query(sql, function(err, result) {
         if(err)
@@ -53,6 +67,19 @@ function executeFile(file, callback)
 
 function executeDirectory(directory, callback)
 {
+    //Return a promise is no callback
+    if(!callback) {
+        return new Promise(function(resolve, reject) {
+            executeDirectory(directory, function(err) {
+                if(err) {
+                    reject(err);
+                } else {
+                    resolve();
+                }
+            })
+        });
+    }
+
     var files = getFiles(directory);
     var tasks = [];
     files.forEach(function(file) {
