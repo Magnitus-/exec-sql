@@ -6,15 +6,13 @@ var Promise = require('bluebird');
 
 var connection = null;
 
-function connect(host, db, user, password)
+function connect(connectionObj)
 {
-    connection = mysql.createConnection({
-        host     : host,
-        user     : user,
-        password : password,
-        database : db,
-        multipleStatements: true
-    });
+    connectionObj.host = connectionObj.host !== undefined connectionObj.host : 'locahost';
+    connectionObj.multipleStatements = true;
+
+    connection = mysql.createConnection(connectionObj);
+
     connection.connect();
     return connection;
 }
