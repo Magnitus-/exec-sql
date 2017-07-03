@@ -108,6 +108,7 @@ execSQL.executeDirectory(path.join(__dirname,'views'), function(err) {
 - Added optional promise support
 - Added easy to run visual tests for node argon and boron
 - Documentation update and formating adjustments
+- Updated version for mysql dependency
 
 ### 1.1.0
 
