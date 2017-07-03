@@ -5,5 +5,8 @@ COPY package.json /node/home/
 RUN npm install
 COPY index.js /node/home/
 COPY tests/index.js /node/home/test.js
+COPY tests/*.sql /node/home/
+COPY tests/sql-directory /node/home/sql-directory
+COPY tests/sql-directory-bad /node/home/sql-directory-bad
 
 CMD ["node", "test.js"]

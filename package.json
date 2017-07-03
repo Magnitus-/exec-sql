@@ -5,16 +5,16 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "http://github.com/Tractr/exec-sql"
+    "url": "http://github.com/Magnitus-/exec-sql"
   },
   "bugs": {
-    "url": "http://github.com/Tractr/exec-sql/issues",
+    "url": "http://github.com/Magnitus-/exec-sql/issues",
     "email": "eric_vallee2003@yahoo.ca"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Eric Vallee (eric_vallee2003@yahoo.ca)",
+  "author": "Eric Vallee (eric_vallee@webificservices.com)",
   "license": "MIT",
   "dependencies": {
     "mysql": "^2.13.0",

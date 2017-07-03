@@ -8,7 +8,7 @@ var connection = null;
 
 function connect(connectionObj)
 {
-    connectionObj.host = connectionObj.host !== undefined connectionObj.host : 'locahost';
+    connectionObj.host = connectionObj.host !== undefined ? connectionObj.host : 'locahost';
     connectionObj.multipleStatements = true;
 
     connection = mysql.createConnection(connectionObj);

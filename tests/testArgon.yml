@@ -1,0 +1,31 @@
+version: "3"
+services:
+    client:
+        build:
+            context: ..
+            dockerfile: dockerfileArgon
+        image: exec-sql-test:argon
+        environment:
+            - DB_HOST=server
+            - DB=test
+            - DB_USER=test
+            - DB_PASSWORD=password
+        networks:
+            - net
+    server:
+        image: mysql:5.7
+        environment:
+            - MYSQL_ROOT_PASSWORD=root
+            - MYSQL_DATABASE=test
+            - MYSQL_USER=test
+            - MYSQL_PASSWORD=password
+        networks:
+            - net
+        volumes:
+            - data:/var/lib/mysql
+
+networks:
+    net:
+
+volumes:
+    data:
