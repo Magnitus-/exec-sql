@@ -17,14 +17,12 @@ Connects to a given database. Currently always use 'localhost' as it was enough 
 #### Signature
 
 ```
-connect(db, user, password)
+connect(connectionObj)
 ```
 
 #### Arguments
 
-* db: Database to connect to
-* user: Database user to connect as
-* password: Password of the database user to connect as
+* connectionObj: This is a connection object that is passed to ```mysql.createConnection```. At the very least, the properties 'database', 'user' and 'password' should be set. The 'host' property will be set to 'localhost' if absent and the 'multipleStatements' will always be set true.
 
 #### Return value
 
@@ -48,6 +46,8 @@ None.
 
 Execute a given SQL file.
 
+Note that a promise will be returned if a callback is not passed as the second argument.
+
 #### Signature
 
 ```
@@ -69,6 +69,8 @@ Execute all SQL files in a given directory. SQL files are identified by their '.
 
 In future versions, sub-directories will be traversed recursively.
 
+Note that a promise will be returned if a callback is not passed as the second argument.
+
 #### Signature
 
 ```
@@ -87,7 +89,11 @@ executeDirectory(directory, callback)
 var execSQL = require('exec-sql');
 var path = require('path');
 
-execSQL.connect('mysql', 'root', 'root');
+execSQL.connect({
+    'database': 'mysql',
+    'user': 'root',
+    'password': 'root'
+});
 execSQL.executeDirectory(path.join(__dirname,'views'), function(err) {
     execSQL.disconnect();
     console.log('Done!');
@@ -95,6 +101,13 @@ execSQL.executeDirectory(path.join(__dirname,'views'), function(err) {
 ```
 
 ## Release Notes
+
+### 2.0.0
+
+- Changed connect method argument signature to improve connection flexibility
+- Added optional promise support
+- Added easy to run visual tests for node argon and boron
+- Documentation update and formating adjustments
 
 ### 1.1.0
 
