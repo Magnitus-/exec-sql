@@ -12,10 +12,16 @@ echo "***** End of tests setup *****";
 
 echo "***** Beginning of tests for node argon *****";
 docker-compose -p execargon -f testArgon.yml up client;
+docker-compose -p execargon -f testArgon.yml exec server mysql --user test --database test -ppassword -e 'SHOW TABLES;';
+docker-compose -p execargon -f testArgon.yml exec server mysql --user test --database test -ppassword -e 'SHOW INDEXES FROM test.tv_shows;';
+docker-compose -p execargon -f testArgon.yml exec server mysql --user test --database test -ppassword -e 'SELECT * FROM test.tv_shows;';
 echo "***** End of tests for node argon *****";
 
 echo "***** Beginning of tests for node boron *****";
 docker-compose -p execboron -f testBoron.yml up client;
+docker-compose -p execboron -f testBoron.yml exec server mysql --user test --database test -ppassword -e 'SHOW TABLES;';
+docker-compose -p execboron -f testBoron.yml exec server mysql --user test --database test -ppassword -e 'SHOW INDEXES FROM test.tv_shows;';
+docker-compose -p execboron -f testBoron.yml exec server mysql --user test --database test -ppassword -e 'SELECT * FROM test.tv_shows;';
 echo "***** End of tests for node boron *****";
 
 echo "***** Beginning of tests cleanup *****";
