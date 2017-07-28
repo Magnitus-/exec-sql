@@ -73,7 +73,7 @@ In future versions, sub-directories will be traversed recursively.
 executeDirectory(directory, callback)
 ```
 
-### Arguments
+#### Arguments
 
 - directory: Directory to execute the SQL files from. Needs to be a valid path to the directory.
 - callback: Callback to be executed once the execution of the SQL files has completed. An error will be passed as its sole argument if any.
