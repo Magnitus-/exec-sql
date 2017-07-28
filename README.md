@@ -46,8 +46,6 @@ None.
 
 Execute a given SQL file.
 
-Note that a promise will be returned if a callback is not passed as the second argument.
-
 #### Signature
 
 ```
@@ -61,15 +59,13 @@ executeFile(file, callback)
 
 #### Return value
 
-None.
+A promise will be returned if a callback is not passed as the second argument, else nothing will be returned.
 
 ### executeDirectory
 
 Execute all SQL files in a given directory. SQL files are identified by their '.sql' ending in the file name. Currently, sub-directories are ignored.
 
 In future versions, sub-directories will be traversed recursively.
-
-Note that a promise will be returned if a callback is not passed as the second argument.
 
 #### Signature
 
@@ -81,6 +77,10 @@ executeDirectory(directory, callback)
 
 - directory: Directory to execute the SQL files from. Needs to be a valid path to the directory.
 - callback: Callback to be executed once the execution of the SQL files has completed. An error will be passed as its sole argument if any.
+
+#### Return value
+
+A promise will be returned if a callback is not passed as the second argument, else nothing will be returned.
 
 ## Example
 
@@ -101,6 +101,12 @@ execSQL.executeDirectory(path.join(__dirname,'views'), function(err) {
 ```
 
 ## Release Notes
+
+### 2.0.1
+
+- Corrected default host value: ```locahost -> localhost```
+- Updated pointer to original repo after clearing permission for update
+- Slight documentation improvement
 
 ### 2.0.0
 
