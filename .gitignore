@@ -1,0 +1,8 @@
+.bash_history
+.cache
+.npm
+.yarnrc
+exec-sql-*.tgz
+node_modules
+yarn.lock
+
