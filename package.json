@@ -20,5 +20,10 @@
     "mysql": "^2.13.0",
     "nimble": "0.0.2",
     "bluebird": "^3.5.0"
-  }
+  },
+  "files": [
+    "index.js",
+    "License.txt",
+    "README.md"
+  ]
 }
