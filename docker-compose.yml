@@ -1,0 +1,16 @@
+version: "3"
+services:
+    workspace:
+        image: node:boron
+        stdin_open: true
+        tty: true
+        volumes:
+          - .:/home/node
+        working_dir: /home/node
+        user: node
+        command: bash
+        networks:
+          - net
+
+networks:
+  net:
