@@ -12,18 +12,21 @@
     "email": "eric_vallee@webificservices.com"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nodeunit tests"
   },
   "author": "Eric Vallee (eric_vallee@webificservices.com)",
   "license": "MIT",
   "dependencies": {
+    "bluebird": "^3.5.0",
     "mysql": "^2.13.0",
-    "nimble": "0.0.2",
-    "bluebird": "^3.5.0"
+    "nimble": "0.0.2"
   },
   "files": [
     "index.js",
     "License.txt",
     "README.md"
-  ]
+  ],
+  "devDependencies": {
+    "nodeunit": "^0.11.2"
+  }
 }

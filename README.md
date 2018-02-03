@@ -100,11 +100,73 @@ execSQL.executeDirectory(path.join(__dirname,'views'), function(err) {
 });
 ```
 
+## tests
+
+You can run the tests either directly on your host or in a dockerized work environment (I personally recommend the later).
+
+### Host
+
+Run the following:
+
+```
+yarn install
+yarn run test
+```
+
+### Docker
+
+Note that you'll need to have docker and docker-composed installed.
+
+Run the following:
+
+```
+docker-compose up -d database
+```
+
+Note that you might have to wait a bit for the database server to properly start. You can look at the mysql server logs to infer status by typing:
+
+```
+docker-compose logs database
+```
+
+Then, run any of the 3 commands below (by default, the workspace is boron aka node 6):
+
+```
+docker-compose run workspace
+docker-compose run workspace-argon
+docker-compose run workspace-carbon
+```
+
+Then, from inside the workspace, type:
+
+```
+yarn install
+yarn run test
+```
+
+To exit the worspace (when inside), type:
+
+```
+exit
+```
+
+To cleanup, from outside the worspace, type:
+
+```
+docker-compose down --volumes
+```
+
+### Note
+
+The tests will output some error logs on the screen. That is normal (as long as you get an indication at the end that all the tests passed) as error paths in the code are tested as well.
+
 ## Release Notes
 
 ### 2.0.2
 
-Updated npm repo pointer back to clone after removal of original repo
+- Updated npm repo pointer back to clone after removal of original repo
+- Improvement in repo packaging declaration
+- Improved test structure and automated them
 
 ### 2.0.1
 

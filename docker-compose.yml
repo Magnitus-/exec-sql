@@ -2,6 +2,11 @@ version: "3"
 services:
     workspace:
         image: node:boron
+        environment:
+            - DB_HOST=database
+            - DB=test
+            - DB_USER=test
+            - DB_PASSWORD=password
         stdin_open: true
         tty: true
         volumes:
@@ -11,6 +16,53 @@ services:
         command: bash
         networks:
           - net
+    workspace-argon:
+        image: node:argon
+        environment:
+            - DB_HOST=database
+            - DB=test
+            - DB_USER=test
+            - DB_PASSWORD=password
+        stdin_open: true
+        tty: true
+        volumes:
+          - .:/home/node
+        working_dir: /home/node
+        user: node
+        command: bash
+        networks:
+          - net
+    workspace-carbon:
+        image: node:carbon
+        environment:
+            - DB_HOST=database
+            - DB=test
+            - DB_USER=test
+            - DB_PASSWORD=password
+        stdin_open: true
+        tty: true
+        volumes:
+          - .:/home/node
+        working_dir: /home/node
+        user: node
+        command: bash
+        networks:
+          - net
+    database:
+        image: mysql:5.7
+        environment:
+            - MYSQL_ROOT_PASSWORD=root
+            - MYSQL_DATABASE=test
+            - MYSQL_USER=test
+            - MYSQL_PASSWORD=password
+        networks:
+            - net
+        volumes:
+            - data:/var/lib/mysql
 
 networks:
   net:
+
+
+volumes:
+  data:
