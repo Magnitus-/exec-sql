@@ -102,10 +102,14 @@ execSQL.executeDirectory(path.join(__dirname,'views'), function(err) {
 
 ## Release Notes
 
+### 2.0.2
+
+Updated npm repo pointer back to clone after removal of original repo
+
 ### 2.0.1
 
 - Corrected default host value: ```locahost -> localhost```
-- Updated pointer to original repo after clearing permission for update
+- Updated npm repo pointer to original repo after clearing permission for update
 - Slight documentation improvement
 
 ### 2.0.0

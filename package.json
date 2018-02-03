@@ -1,14 +1,14 @@
 {
   "name": "exec-sql",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Library to execute SQL files in a directory",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Tractr/exec-sql"
+    "url": "https://github.com/Magnitus-/exec-sql"
   },
   "bugs": {
-    "url": "https://github.com/Tractr/exec-sql/issues",
+    "url": "https://github.com/Magnitus-/exec-sql/issues",
     "email": "eric_vallee@webificservices.com"
   },
   "scripts": {
